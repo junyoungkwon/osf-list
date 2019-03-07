@@ -7,6 +7,7 @@ public interface FoodDAO {
 	public List<Map<String, String>> selectFoodList();
 
 	public Map<String, String> selectFood(Map<String, String> food);
-
 	public boolean insertFood(Map<String, String> food);
+	public boolean updateFood(Map<String, String> food);
+	public boolean deleteFood(Map<String, String> food);
 }

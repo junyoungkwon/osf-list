@@ -33,8 +33,11 @@ public class FoodController {
 		if("insert".equals(cmd)) {
 			res.put("insert", fs.insertFood(food));
 			
-		}else if("food".equals(cmd)) {
-			res.put("food",fs.selectFood(food));
+		}else if("update".equals(cmd)) {
+			res.put("update",fs.updateFood(food));
+			
+		}else if("delete".equals(cmd)) {
+			res.put("delete",fs.deleteFood(food));
 		}
 	}
 }

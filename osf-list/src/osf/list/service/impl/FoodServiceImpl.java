@@ -26,4 +26,14 @@ public class FoodServiceImpl implements FoodService {
 		return fdao.selectFood(food);
 	}
 
+	@Override
+	public boolean updateFood(Map<String, String> food) {
+		return fdao.updateFood(food);
+	}
+
+	@Override
+	public boolean deleteFood(Map<String, String> food) {
+		return fdao.deleteFood(food);
+	}
+
 }
