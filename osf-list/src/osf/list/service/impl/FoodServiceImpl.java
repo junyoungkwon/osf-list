@@ -1,4 +1,4 @@
-package osf.list.controller;
+package osf.list.service.impl;
 
 import java.util.List;
 import java.util.Map;

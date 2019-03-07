@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import osf.list.service.FoodService;
-
+import osf.list.service.impl.FoodServiceImpl;
 
 public class FoodController {
 	private FoodService fs = new FoodServiceImpl();

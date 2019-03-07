@@ -22,7 +22,7 @@ public class FoodDAOImpl implements FoodDAO {
 	public Map<String, String> selectFood(Map<String, String> food) {
 		for (int i = 0; i < FoodData.FOOD_LIST.size(); i++) {
 			Map<String, String> f = FoodData.FOOD_LIST.get(i);
-			if (f.get("번호").contentEquals(food.get("번호"))) {
+			if (f.get("번호").equals(food.get("번호"))) {
 				return f;
 			}
 		}
