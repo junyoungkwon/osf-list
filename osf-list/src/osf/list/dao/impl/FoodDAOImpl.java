@@ -1,28 +1,27 @@
 package osf.list.dao.impl;
 
 import java.util.List;
-import java.util.Map;
-
 import osf.list.dao.FoodDAO;
 import osf.list.data.FoodData;
+import osf.list.vo.FoodVO;
 
 public class FoodDAOImpl implements FoodDAO {
 
 	@Override
-	public List<Map<String, String>> selectFoodList() {
+	public List<FoodVO> selectFoodList() {
 		return FoodData.FOOD_LIST;
 	}
 
 	@Override
-	public boolean insertFood(Map<String, String> food) {
+	public boolean insertFood(FoodVO food) {
 		return FoodData.FOOD_LIST.add(food);
 	}
 
 	@Override
-	public Map<String, String> selectFood(Map<String, String> food) {
+	public FoodVO selectFood(FoodVO food) {
 		for (int i = 0; i < FoodData.FOOD_LIST.size(); i++) {
-			Map<String, String> f = FoodData.FOOD_LIST.get(i);
-			if (f.get("번호").equals(food.get("번호"))) {
+			FoodVO f = FoodData.FOOD_LIST.get(i);
+			if (f.getNumber().equals(food.getNumber())) {
 				return f;
 			}
 		}
@@ -30,15 +29,15 @@ public class FoodDAOImpl implements FoodDAO {
 	}
 
 	@Override
-	public boolean updateFood(Map<String, String> food) {
+	public boolean updateFood(FoodVO food) {
 		for (int i = 0; i < FoodData.FOOD_LIST.size(); i++) {
-			Map<String, String> f = FoodData.FOOD_LIST.get(i);
-			if (f.get("번호").equals(food.get("번호"))) {
-				if (food.get("이름") != null) {
-					f.put("이름", food.get("이름"));
+			FoodVO f = FoodData.FOOD_LIST.get(i);
+			if (f.getNumber().equals(food.getNumber())) {
+				if (food.getName() != null) {
+					f.setName(food.getName());
 				}
-				if (food.get("가격") != null) {
-					f.put("가격", food.get("가격"));
+				if (food.getPrice() != null) {
+					f.setPrice(food.getPrice());
 				}
 				return true;
 			}
@@ -47,10 +46,10 @@ public class FoodDAOImpl implements FoodDAO {
 	}
 
 	@Override
-	public boolean deleteFood(Map<String, String> food) {
+	public boolean deleteFood(FoodVO food) {
 		for(int i=0;i<FoodData.FOOD_LIST.size();i++) {
-			Map<String,String> f = FoodData.FOOD_LIST.get(i);
-			if(f.get("번호").equals(food.get("번호"))) {
+			FoodVO f = FoodData.FOOD_LIST.get(i);
+			if(f.getNumber().equals(food.getNumber())) {
 				FoodData.FOOD_LIST.remove(i);
 				return true;
 			}

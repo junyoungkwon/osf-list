@@ -1,13 +1,14 @@
 package osf.list.service;
 
 import java.util.List;
-import java.util.Map;
+
+import osf.list.vo.FoodVO;
 
 public interface FoodService {
-	public List<Map<String,String>> selectFoodList();
-	public boolean insertFood(Map<String,String> food);
-	public Map<String,String> selectFood(Map<String,String> food);
-	public boolean updateFood(Map<String,String> food);
-	public boolean deleteFood(Map<String,String>food);
+	public List<FoodVO> selectFoodList();
+	public boolean insertFood(FoodVO food);
+	public FoodVO selectFood(FoodVO food);
+	public boolean updateFood(FoodVO food);
+	public boolean deleteFood(FoodVO food);
 	
 }
